@@ -10,7 +10,7 @@ Green Tally is a web-based carbon footprint calculator designed to help users un
 1. Click the green "Code" button on this repository
 2. Select "Download ZIP"
 3. Extract the ZIP file to your computer
-4. Open the `index.html` file in your web browser
+4. Open the index.html file in your web browser
 
 Or Clone with Git
 
