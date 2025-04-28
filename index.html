@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Tally - Carbon Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Green Tally</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <!-- Introduction Section -->
+        <div id="intro-section">
+            <div class="simple-page-header">
+                <h1>Track Your Carbon Footprint</h1>
+            </div>
+            
+            <div class="intro-content">
+                <p> Our simple carbon calculator helps you see how your daily choices affect the planet.</p>
+                
+                <h3>How to use this calculator:</h3>
+                <ol class="instructions-list">
+                    <li>Enter the distance you travel and your main transport method</li>
+                    <li>Add your monthly electricity usage in kilowatt-hours (kWh)</li>
+                    <li>Select your diet type from the dropdown menu</li>
+                    <li>Indicate how many people live in your household</li>
+                    <li>Click "Calculate Impact" to see your results</li>
+                </ol>
+                
+            </div>
+        </div>
+
+        <!-- Calculator Explanation -->
+        <div id="calculator-explanation">
+            <div class="simple-header">
+                <h2>How Our Calculator Works</h2>
+            </div>
+            
+            <div class="explanation-content">
+              
+                
+                <div class="explanation-card">
+                    <h4>Transportation</h4>
+                    <p>We multiply your travel distance by the carbon emission factor for your chosen transport method:</p>
+                    <ul class="factor-list">
+                        <li>Car: 0.404 kg CO₂ per kilometer</li>
+                        <li>Bus: 0.089 kg CO₂ per kilometer</li>
+                        <li>Train: 0.041 kg CO₂ per kilometer</li>
+                        <li>Bike/Walking: 0 kg CO₂ </li>
+                    </ul>
+                </div>
+                
+                <div class="explanation-card">
+                    <h4>Electricity</h4>
+                    <p>Your electricity usage is calculated using an average emissions factor of 0.233 kg CO₂ per kWh, based on the average grid mix.</p>
+                </div>
+                
+                <div class="explanation-card">
+                    <h4>Diet</h4>
+                    <p>Different diets have different carbon impacts due to production methods and resource use:</p>
+                    <ul class="factor-list">
+                        <li>Omnivore: 2.5 kg CO₂ per day</li>
+                        <li>Vegetarian: 1.7 kg CO₂ per day</li>
+                        <li>Vegan: 1.5 kg CO₂ per day</li>
+                        <li>Pescatarian: 2.0 kg CO₂ per day</li>
+                    </ul>
+                </div>
+               
+        </div>
+
+        <!-- Calculator Section -->
+        <div id="calculator-section">
+            <div class="simple-header">
+                <h2>Carbon Calculator</h2>
+            </div>
+            
+            <form id="carbon-form">
+                <div class="form-group">
+                    <label for="miles">Distance (km)</label>
+                    <input type="number" id="miles" placeholder="0" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="transport-mode">Transport Type</label>
+                    <select id="transport-mode" required>
+                        <option value="">Select</option>
+                        <option value="car">Car</option>
+                        <option value="bus">Bus</option>
+                        <option value="train">Train</option>
+                        <option value="bike">Bike</option>
+                        <option value="walk">Walking</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="electricity">Electricity (kWh)</label>
+                    <input type="number" id="electricity" placeholder="0" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="diet">Diet</label>
+                    <select id="diet" required>
+                        <option value="">Select</option>
+                        <option value="omnivore">Omnivore</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="pescatarian">Pescatarian</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="household-size">Household Members</label>
+                    <input type="number" id="household-size" value="1" min="1" required>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Calculate Impact
+                </button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section">
+            <div class="simple-header">
+                <h2>Your Results</h2>
+                
+            </div>
+
+            <div class="results-box">
+                <div class="result-summary">
+                    <div class="result-value">
+                        <span id="score-display">-</span>
+                        <span class="unit">kg CO₂</span>
+                    </div>
+                    <p id="result-text">Enter your data above to calculate your carbon footprint.</p>
+                </div>
+
+                <div class="chart-wrapper">
+                    <canvas id="carbonChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    <footer>
+        <div class="copyright">&copy; 2025 Green Tally</div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="signin-script.js"></script>
+</body>
+</html>
